@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="../css/style.css"> <!-- corrigido -->
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 style="color:#3d3d45">Lista de Tarefas
+      </h1>
+      <h2 style="margin:0 0 12px;color:#3d3d45;font-size:16px">
+        Tarefas de Hoje
+      </h2>
+
+      <!-- exibe o nível -->
+      <div id="nivelDisplay" style="font-size:14px;color:#777;margin-bottom:10px;">
+        Nível 1 - Aprendiz 🔰
+      </div>
+
+      <!-- input e botão adicionar -->
+      <div class="input-row">
+        <input id="taskInput" type="text" placeholder="escreva uma tarefa e aperte enter ou adicionar" maxlength="200" />
+        <button id="addBtn" type="button">Adicionar</button>
+      </div>
+
+      <!-- tarefas ativas -->
+      <ul id="tasksList" aria-live="polite"></ul>
+
+      <!-- container de tarefas concluídas -->
+      <div id="completedTasksContainer" class="hidden">
+        <h3>Tarefas Concluídas</h3>
+        <ul id="completedTasksList"></ul>
+      </div>
+
+      <!-- meta e botões -->
+      <div class="meta">
+        <div id="counts">0 Tarefas — 0 Concluídas</div>
+        <div>
+          <button id="showCompleted" class="secondary">Ver Tarefas Concluídas</button>
+          <button id="clearCompleted" class="secondary">Limpar Concluídas</button>
+          <button id="clearAll" class="secondary">Limpar Tudo</button> <!-- adicionado -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

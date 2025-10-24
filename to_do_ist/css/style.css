@@ -1,0 +1,168 @@
+:root {
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --accent: #3b82f6;
+  --muted: #6b7280;
+  --danger: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  background: var(--bg);
+  color: #111;
+}
+
+.container {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  color: #3d3d45;
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ee;
+  font-size: 15px;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: #2563eb;
+  transform: scale(1.03);
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid #e6e9ee;
+  white-space: nowrap;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0;
+  padding: 8px 12px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+li:hover {
+  background: #e8ebf0;
+}
+
+button.complete-btn,
+button.edit-btn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 16px;
+  color: rgb(0, 12, 12);
+  transition: transform 0.2s;
+}
+
+button.complete-btn:hover {
+  color: green;
+  transform: scale(1.1);
+}
+
+button.edit-btn:hover {
+  color: #1c0000;
+  transform: scale(1.1);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.hidden {
+  display: none;
+}
+
+.nivel-display {
+  font-size: 14px;
+  color: #555;
+  text-align: right;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.task-text {
+  font-size: 15px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+#completedTasksContainer {
+  margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 20px;
+    padding: 12px;
+  }
+}

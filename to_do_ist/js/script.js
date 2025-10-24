@@ -51,18 +51,19 @@ function renderTasks() {
     if (!task.completed) {
       const li = document.createElement("li");
 
+      // container esquerdo
+      const left = document.createElement("div");
+      left.classList.add("left");
+
       const textSpan = document.createElement("span");
       textSpan.textContent = task.text;
+      textSpan.classList.add("task-text");
 
+      left.appendChild(textSpan);
+
+      // container de botões
       const btnContainer = document.createElement("div");
-      btnContainer.style.display = "flex";
-      btnContainer.style.gap = "5px";
-
-      const btnComplete = document.createElement("button");
-      btnComplete.textContent = "✔";
-      btnComplete.classList.add("complete-btn");
-      btnComplete.title = "marcar como concluída";
-      btnComplete.addEventListener("click", () => toggleTask(index));
+      btnContainer.classList.add("actions");
 
       const btnEdit = document.createElement("button");
       btnEdit.textContent = "✏️";
@@ -70,10 +71,16 @@ function renderTasks() {
       btnEdit.title = "editar tarefa";
       btnEdit.addEventListener("click", () => editTask(index));
 
+      const btnComplete = document.createElement("button");
+      btnComplete.textContent = "✔";
+      btnComplete.classList.add("complete-btn");
+      btnComplete.title = "marcar como concluída";
+      btnComplete.addEventListener("click", () => toggleTask(index));
+
       btnContainer.appendChild(btnEdit);
       btnContainer.appendChild(btnComplete);
 
-      li.appendChild(textSpan);
+      li.appendChild(left);
       li.appendChild(btnContainer);
 
       tasksList.appendChild(li);
@@ -106,7 +113,6 @@ function renderCompletedTasks() {
 function toggleTask(index) {
   tasks[index].completed = true;
   saveTasks();
-  // abrir container de concluídas automaticamente
   completedTasksContainer.classList.remove("hidden");
   showCompletedBtn.textContent = "ocultar tarefas feitas";
   renderTasks();
@@ -172,6 +178,5 @@ showCompletedBtn.addEventListener("click", () => {
     ? "ver tarefas feitas"
     : "ocultar tarefas feitas";
 
-  // garante que lista esteja atualizada ao abrir
   renderCompletedTasks();
 });
